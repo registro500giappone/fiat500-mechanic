@@ -28,7 +28,9 @@ export default function PocketMechanic() {
   // 初期化
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+      // ★修正箇所: windowをanyにキャストし、TypeScriptの型エラーを回避
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      
       if (SpeechRecognition) {
         const recognition = new SpeechRecognition();
         recognition.lang = 'ja-JP';
@@ -44,7 +46,6 @@ export default function PocketMechanic() {
 
         recognition.onend = () => {
           setIsListening(false);
-          // 音声認識終了後、テキストがあればAI処理へ
           if (transcript) {
             handleAIProcessing(transcript);
           }
@@ -54,7 +55,7 @@ export default function PocketMechanic() {
       }
       synthRef.current = window.speechSynthesis;
     }
-  }, [transcript]); // transcriptの更新を参照
+  }, [transcript]); 
 
   // マイクのトグル
   const toggleListening = () => {
@@ -64,6 +65,11 @@ export default function PocketMechanic() {
       setTranscript('');
       setInputText('');
       try {
+        // ★修正箇所: SpeechRecognitionが存在しない場合のガードを強化
+        if (!(window as any).SpeechRecognition && !(window as any).webkitSpeechRecognition) {
+             alert("マイク機能が利用できません。");
+             return;
+        }
         recognitionRef.current?.start();
         setIsListening(true);
       } catch (e) {
