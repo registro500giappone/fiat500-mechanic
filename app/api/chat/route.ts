@@ -45,7 +45,7 @@ export async function POST(req: Request) {
       let score = 0;
       // 型を明確にすることで、コンパイラエラーを防ぐ (Vercelのビルド環境対策)
       const content = section.title + section.text; 
-      keywords.forEach((k) => {
+      keywords.forEach((k: string) => {
         if (content.includes(k)) score += 1;
       });
       return { ...section, score };
