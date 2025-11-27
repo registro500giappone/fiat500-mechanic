@@ -1,0 +1,255 @@
+[
+  {
+    "id": "1-1",
+    "category": "エンジン",
+    "title": "エンジンの概要 (Description)",
+    "text": "FIAT 500のエンジンは、4ストローク、空冷2気筒エンジンです。トランスミッションユニットに直接取り付けられ、リアに配置されています。"
+  },
+  {
+    "id": "1-2",
+    "category": "エンジン",
+    "title": "エンジンの取り外し (セダン)",
+    "text": "1. 車体後部をジャッキアップし、ウマをかけます。\n2. バッテリーのマイナス端子を外します。\n3. エンジンルームのリッド（蓋）を外します。\n4. スターター、ジェネレーター、コイルの配線を外します。\n5. アクセルワイヤー、チョークワイヤー、燃料ホースを外します。\n6. ヒーターホースとエアダクトを外します。\n7. エンジンとミッションを結合しているボルトを外します。\n8. エンジンマウントを外し、エンジンを慎重に後方へ引き抜いて降ろします。"
+  },
+  {
+    "id": "1-6",
+    "category": "エンジン",
+    "title": "シリンダーヘッドの整備",
+    "text": "バルブシートの角度は、インテーク・エキゾースト共に 45° ± 5' です。バルブステムとガイドのクリアランス規定値は 0.00087〜0.00217インチ (0.022〜0.055mm) です。これを超えた場合はガイドの交換が必要です。"
+  },
+  {
+    "id": "1-9",
+    "category": "エンジン",
+    "title": "ピストンとリング",
+    "text": "ピストンリングの合口隙間（リングギャップ）を確認してください。リングを取り付ける際は、合口が一直線にならないように配置し、ピストンの拡張ストップの反対側にくるようにしてください。ピストンピンは80℃の熱湯でピストンを温めてから挿入します。"
+  },
+  {
+    "id": "1-10",
+    "category": "エンジン",
+    "title": "コンロッド (Connecting Rods)",
+    "text": "コンロッドベアリング（子メタル）のクリアランスは 0.00043〜0.00240インチ (0.011〜0.061mm) です。プラスチゲージを使用して測定してください。組み付け時のビッグエンドキャップの締め付けトルクは 23.9 lb·ft (約 3.3 kg-m / 32.4 N·m) です。"
+  },
+  {
+    "id": "1-11",
+    "category": "エンジン",
+    "title": "クランクシャフトとメインベアリング",
+    "text": "メインベアリングとジャーナルのクリアランスは 0.00079〜0.00256インチ (0.020〜0.065mm) です。摩耗限度を超えている場合は、アンダーサイズのベアリングを使用し、クランクシャフトを研磨する必要があります。"
+  },
+  {
+    "id": "1-12",
+    "category": "エンジン",
+    "title": "フライホイール (Flywheel)",
+    "text": "フライホイールを取り付ける際は、クランクシャフトとの位置関係（合いマーク）を確認してください。ボルトは新しいロックプレートと共に使用し、規定トルク 23.1 lb·ft (約 3.2 kg-m / 31.3 N·m) で締め付け、ロックプレートを曲げて固定します。"
+  },
+  {
+    "id": "1-13",
+    "category": "エンジン",
+    "title": "オイルポンプ",
+    "text": "オイルポンプはタイミングカバー内にあります。ギアとハウジングのクリアランスは 0.0012〜0.0035インチ (0.03〜0.09mm) が規定値です。摩耗限度は 0.0047インチ (0.12mm) です。"
+  },
+  {
+    "id": "1-14",
+    "category": "エンジン",
+    "title": "遠心オイルフィルター (Centrifugal Oil Filter)",
+    "text": "遠心オイルフィルターのカバー（プーリー）を取り付ける際は、Oリングが正しく装着されているか確認してください。フィルター本体をクランクシャフトに固定する中空ボルトの締め付けトルクは 108.5 lb·ft (約 15.0 kg-m / 147 N·m) です。カバーの小さなボルトは 5.8 lb·ft (約 0.8 kg-m / 7.8 N·m) で締め付けます。"
+  },
+  {
+    "id": "1-16",
+    "category": "エンジン",
+    "title": "バルブクリアランス (タペット調整)",
+    "text": "エンジンが冷えている状態で測定してください。インテーク、エキゾースト共に規定値は 0.0059インチ (0.15mm) です。クリアランスが大きすぎると騒音の原因になり、小さすぎるとバルブ損傷の原因になります。"
+  },
+  {
+    "id": "1-17-1",
+    "category": "エンジン",
+    "title": "エンジンの組み立て (シリンダーヘッド)",
+    "text": "シリンダーヘッドナットの締め付けは、必ず対角線上の順序で行ってください。2段階に分けて締め付けることを推奨します。最終的な規定トルクは 23.9 lb·ft (約 3.3 kg-m / 32.4 N·m) です。"
+  },
+  {
+    "id": "1-17-2",
+    "category": "エンジン",
+    "title": "ロッカーアームシャフトの取り付け",
+    "text": "ロッカーアームシャフトのサポート取り付けナットの締め付けトルクは 15.2 lb·ft (約 2.1 kg-m / 20.6 N·m) です。取り付け後に必ずバルブクリアランスを調整してください。"
+  },
+  {
+    "id": "1-20",
+    "category": "エンジン",
+    "title": "ファンベルトの調整",
+    "text": "ジェネレータープーリーの分割シム（スペーサー）の枚数を変えることで張りを調整します。ベルトの中央を約22ポンド(10kg)の力で押した時、たわみ量が 約10mm (13/32インチ) になるのが適正です。"
+  },
+  {
+    "id": "3-3",
+    "category": "点火系",
+    "title": "ポイント（コンタクトブレーカー）の調整",
+    "text": "ポイントギャップの規定値は 0.0185〜0.0209インチ (0.47〜0.53mm) です。最大に開いた位置で測定してください。ポイント面が荒れている場合はオイルストーンで磨くか交換してください。"
+  },
+  {
+    "id": "3-7",
+    "category": "点火系",
+    "title": "点火時期の調整 (タイミング)",
+    "text": "第1シリンダーを圧縮上死点に合わせ（両バルブ閉）、クランクシャフトを回して遠心フィルターカバーのマークを合わせます。規定値: 10° BTDC (上死点前10度)。専用ツール(AP.5030/1)がない場合は、タイミングカバーの矢印より約13-14mm (0.51-0.55インチ) 手前にマークが来るようにセットしてください。"
+  },
+  {
+    "id": "3-8",
+    "category": "点火系",
+    "title": "スパークプラグ",
+    "text": "スパークプラグの電極ギャップ規定値: 0.019〜0.023インチ (0.48〜0.58mm)。取り付け時の締め付けトルクは 18〜21 lb·ft (約 2.5〜2.9 kg-m / 24〜28 N·m) です。ネジ山には焼付き防止剤を塗布することを推奨します。"
+  },
+{
+    "id": "2-3",
+    "category": "燃料系",
+    "title": "燃料ポンプのメンテナンス (Fuel Pump)",
+    "text": "Periodically check the pump body screws and upper cover screw for tightness. Check fuel lines for restriction or chafing. Clean the filter periodically."
+  },
+  {
+    "id": "2-6-1",
+    "category": "燃料系",
+    "title": "キャブレターの調整 (アイドリング)",
+    "text": "The idling speed is adjusted by the throttle setscrew and the mixture setscrew. Adjust when engine is at normal operating temperature. Turn the mixture screw in or out to find the smoothest running, then reduce throttle opening slightly to obtain best idling speed."
+  },
+  {
+    "id": "2-6-2",
+    "category": "燃料系",
+    "title": "フロートレベルの調整 (Float Level)",
+    "text": "Check that the needle valve is screwed tight. With the cover vertical and float arm touching the needle ball, the float should be 7mm (0.276 inch) or 5/16 inch away from the cover with gasket. Float travel should be 5/16 inch."
+  },
+  {
+    "id": "4-2",
+    "category": "冷却系",
+    "title": "冷却ファンのサーモスタット (Thermostat)",
+    "text": "The thermostat controls the air outlet shutter. It starts opening at 158-165°F (70-74°C) and should be wide open at 178-189°F (81-87°C). Check that initial movement is 0.0197-0.0394 inch (0.5-1.0mm)."
+  },
+  {
+    "id": "4-3",
+    "category": "冷却系",
+    "title": "ファンベルトの張り調整 (Fan Belt Tension)",
+    "text": "Check that the tension is correct: with a hand pressure of approximately 22 lb (10kg), the belt should sag 13/32 inch (approx 10mm). Adjust by adding or removing spacer rings between the pulley halves. Pulley nut torque: 14.5 lb·ft (2.0 kg-m)."
+  },
+  {
+    "id": "5-4",
+    "category": "クラッチ",
+    "title": "クラッチの調整 (Pedal Travel)",
+    "text": "Clutch pedal must have free travel of 1-3/8 to 1-9/16 inch (35-40mm) for early models. For 500F/L models, free travel should be 19/32 to 1-3/16 inch (15-30mm). Adjust via the tie rod locknut."
+  },
+  {
+    "id": "5-5",
+    "category": "クラッチ",
+    "title": "クラッチの取り付け (Installation)",
+    "text": "Tighten the clutch mounting screws diagonally a turn at a time. Torque setting: 5.8 to 7.2 lb·ft (0.8-1.0 kg-m). Use alignment tool A.62023."
+  },
+  {
+    "id": "6-4",
+    "category": "ギアボックス",
+    "title": "ギアボックスの締め付けトルク (Gearbox Assembly)",
+    "text": "Tighten primary shaft and layshaft nuts to: Primary 18.1-25.3 lb·ft (2.5-3.5 kg-m), Layshaft 28.9-36.2 lb·ft (4.0-5.0 kg-m). Gearbox to body mounting nuts: 18.1-21.7 lb·ft (2.5-3.0 kg-m)."
+  },
+  {
+    "id": "6-7",
+    "category": "ギアボックス",
+    "title": "デフ・ファイナルギア (Differential)",
+    "text": "Ring gear to pinion backlash should be 0.0031-0.0047 inch (0.08-0.12mm). Differential bearing cap nuts torque: 27.5 lb·ft (3.8 kg-m)."
+  },
+{
+    "id": "7-3",
+    "category": "リアサスペンション",
+    "title": "リアホイールベアリングの調整 (Rear Wheel Bearings)",
+    "text": "Tighten the wheel shaft nut gradually so that the rotation torque does not exceed 0.36 lb·ft (0.05 kg-m). If torque is too high, fit a new resilient spacer. Pack bearings with Fiat MR grease."
+  },
+  {
+    "id": "7-5",
+    "category": "リアサスペンション",
+    "title": "リアサスペンションの取り付けトルク (Rear Suspension Torque)",
+    "text": "Tighten swing arm pin nuts to 43.4-50.6 lb·ft (6.0-7.0 kg-m). Outer support mounting screws to 28.9-36.2 lb·ft (4.0-5.0 kg-m). Wheel mounting bolts to 32.5-39.8 lb·ft (4.5-5.5 kg-m)."
+  },
+  {
+    "id": "7-6",
+    "category": "リアサスペンション",
+    "title": "リアトーイン調整 (Rear Toe-in)",
+    "text": "Rear wheel plane must be parallel to car centerline with a tolerance of 0° 10'. Adjust by moving the swinging arm outer support. Drive shaft flange screws torque: 20.3 lb·ft (2.8 kg-m)."
+  },
+  {
+    "id": "8-8",
+    "category": "フロントサスペンション",
+    "title": "フロントサスペンションのトルク (Front Suspension Torque)",
+    "text": "Swing arm to wheel assembly nuts: 39.8 lb·ft (5.5 kg-m). Leaf spring to kingpin housing: 28.9 lb·ft (4.0 kg-m). Swing arm pin to body: 28.9 lb·ft (4.0 kg-m)."
+  },
+  {
+    "id": "8-8-3",
+    "category": "フロントサスペンション",
+    "title": "フロントハブベアリングの調整 (Front Hub)",
+    "text": "For cotter pin type: Tighten nut to 21.7 lb·ft (3.0 kg-m), back off 60 degrees (1 flat). For stake nut type: Tighten to 14.5 lb·ft (2.0 kg-m) to seat, back off, then retighten to 5.1 lb·ft (0.7 kg-m) and back off 30 degrees. Hub end play must be 0.001-0.0039 inch (0.025-0.10mm)."
+  },
+  {
+    "id": "9-4",
+    "category": "ステアリング",
+    "title": "ステアリングボックスのトルク (Steering Box)",
+    "text": "Pitman arm nut torque: 72 lb·ft (10.0 kg-m). Steering box to body nuts: 14-18 lb·ft (1.9-2.5 kg-m)."
+  },
+  {
+    "id": "9-6",
+    "category": "ステアリング",
+    "title": "タイロッドのトルク (Tie Rods)",
+    "text": "Tie rod and knuckle arm ball pin nuts: 18-21 lb·ft (2.5-2.9 kg-m). Relay lever pivot pin nut: 39-43 lb·ft (5.4-5.9 kg-m)."
+  },
+  {
+    "id": "9-7",
+    "category": "ステアリング",
+    "title": "フロントトーイン調整 (Front Toe-in)",
+    "text": "Front wheel toe-in should be 0-0.079 inch (0-2mm). Measured at wheel rims. Adjust by turning the tie rod sleeves."
+  },
+  {
+    "id": "10-3",
+    "category": "ブレーキ",
+    "title": "ブレーキの整備基準 (Brake Specs)",
+    "text": "Minimum permissible brake lining thickness: 0.059 inch (1.5mm). Drum maximum permissible oversize diameter: 0.039 inch (1.0mm) over nominal 6.702 inch."
+  },
+{
+    "id": "11-2",
+    "category": "電気系",
+    "title": "バッテリーのメンテナンス (Battery)",
+    "text": "12Vの鉛蓄電池を使用します。ターミナルの腐食は希アンモニア水で洗浄し、ワセリンを塗布して接続してください。電解液レベルはセパレーターの上まで蒸留水を補充します。"
+  },
+  {
+    "id": "11-3",
+    "category": "電気系",
+    "title": "ジェネレーター (Generator)",
+    "text": "プーリーのファン取り付けナットの締め付けトルクは 14.5 lb·ft (約 2.0 kg-m / 20 N·m) です。ブラシの長さが規定以下になったら交換してください。ブラシスプリングの張力は 1.3-1.6 lb (約 0.6-0.7 kg) です。"
+  },
+  {
+    "id": "11-4",
+    "category": "電気系",
+    "title": "スターターモーター (Starter)",
+    "text": "スターターが回らない場合、バッテリー、スイッチ、接続を確認してください。ブラシスプリングの張力規定値は 2.5-2.9 lb (約 1.1-1.3 kg) です。ピニオンが噛み込んだ場合は、ギアを入れて車両を前後に揺すってください。"
+  },
+  {
+    "id": "11-6",
+    "category": "電気系",
+    "title": "ヒューズ (Fuses)",
+    "text": "ヒューズボックスはフロントコンパートメント（ガソリンタンクの後ろ）にあります。回路図を参照し、切れたヒューズは同じ定格のものと交換してください。"
+  },
+  {
+    "id": "11-9",
+    "category": "電気系",
+    "title": "電球の交換 (Bulbs)",
+    "text": "ヘッドライト: ダブルフィラメント球。フロントコンパートメント内側からゴムキャップを外して交換します。ウインカー/テール: レンズのネジを外して交換します。ナンバー灯: レンズとキャップのネジを外して交換します。"
+  },
+  {
+    "id": "12-5",
+    "category": "ボディ",
+    "title": "ドアウィンドウの脱着 (Door Glass)",
+    "text": "ウィンドウレギュレーターは3本のネジで固定されています。ガラスを外す際は、前方のガラスガイドを緩め、慎重に持ち上げて取り外してください。"
+  },
+  {
+    "id": "12-6",
+    "category": "ボディ",
+    "title": "フロントガラスの交換 (Windscreen)",
+    "text": "取り外しは車内からガラスを慎重に押し出します。取り付け時は、ウェザーストリップをガラスに装着し、溝にコード（紐）を通してボディ開口部に合わせ、コードを引き抜きながらゴムを被せていきます。"
+  },
+  {
+    "id": "12-11",
+    "category": "ボディ",
+    "title": "キャンバストップ (Folding Top)",
+    "text": "リアの固定モールディングは10本のネジ（セルフタッピング6本、標準4本）で固定されています。組み立て時は、ピボットボウの位置が正しいことを確認してください。"
+  }
+]
+]
