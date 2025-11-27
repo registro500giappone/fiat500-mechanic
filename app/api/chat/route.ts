@@ -51,11 +51,11 @@ export async function POST(req: Request) {
       return { ...section, score };
     });
 
+// app/api/chat/route.ts (55行目あたり)
     const relevantSections = scoredSections
-      .filter(s => s.score > 0)
-      .sort((a, b) => b.score - a.score)
+      .filter((s: any) => s.score > 0) // ★ s: any を追加
+      .sort((a: any, b: any) => b.score - a.score) // ★ a: any, b: any を追加
       .slice(0, 5);
-
     const contextDocs = relevantSections.length > 0 ? relevantSections : manualData.slice(0, 20);
     
     const contextText = contextDocs.map((doc: any) => 
