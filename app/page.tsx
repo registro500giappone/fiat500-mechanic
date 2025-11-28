@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 export default function Home() {
   const [inputText, setInputText] = useState("");
@@ -10,10 +10,11 @@ export default function Home() {
   const [isHandsFree, setIsHandsFree] = useState(false);
   
   const recognitionRef = useRef<any>(null);
-  // ★追加：通信を強制切断するためのコントローラー
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  useEffect(() => {
+  // ■ マイク設定を作成する関数（独立させました）
+  // これを「画面を開いた時」と「ボタンを押した時」の両方で使います
+  const setupRecognition = useCallback(() => {
     if (typeof window !== "undefined" && (window as any).webkitSpeechRecognition) {
       const recognition = new (window as any).webkitSpeechRecognition();
       recognition.lang = "ja-JP";
@@ -21,6 +22,13 @@ export default function Home() {
       recognition.interimResults = false;
 
       recognition.onstart = () => setIsListening(true);
+      
+      // 重要：エラーが出ても、聞き取り終了として処理する（バグ防止）
+      recognition.onerror = (e: any) => {
+        console.error("Recognition error:", e);
+        setIsListening(false);
+      };
+
       recognition.onend = () => setIsListening(false);
 
       recognition.onresult = (event: any) => {
@@ -30,18 +38,23 @@ export default function Home() {
       };
 
       recognitionRef.current = recognition;
+      return recognition;
     }
-  }, [isHandsFree]);
+    return null;
+  }, []); // 依存配列は空でOK
+
+  // 初回ロード時＆ハンズフリー切り替え時にマイクを準備
+  useEffect(() => {
+    setupRecognition();
+  }, [isHandsFree, setupRecognition]);
 
   const handleSend = async (text: string) => {
     if (!text) return;
 
-    // 前回の通信が残っていたらキャンセル
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
 
-    // 新しい通信用のコントローラーを作成
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
@@ -53,7 +66,7 @@ export default function Home() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
-        signal: controller.signal, // ★ここで「中断スイッチ」をセット
+        signal: controller.signal,
       });
       
       const data = await res.json();
@@ -61,14 +74,12 @@ export default function Home() {
       speak(data.reply);
 
     } catch (error: any) {
-      // 中断(Abort)された場合はエラーメッセージを出さない
       if (error.name === 'AbortError') {
         console.log("Fetch aborted");
       } else {
         setResponse("すみません、エラーが発生しました。");
       }
     } finally {
-      // 正常終了でも中断でも、ローディングは終わる
       setIsLoading(false);
       abortControllerRef.current = null;
     }
@@ -82,48 +93,61 @@ export default function Home() {
     utterance.pitch = 1.0;
     
     utterance.onend = () => {
-      if (isHandsFree && recognitionRef.current) {
-        setTimeout(() => recognitionRef.current.start(), 500);
+      // ハンズフリーモード時は、読み上げ後にマイクを再起動
+      if (isHandsFree) {
+        // ここでもマイクを「新品」にしてから起動する（PWA対策）
+        const newRecognition = setupRecognition();
+        if (newRecognition) {
+          setTimeout(() => newRecognition.start(), 500);
+        }
       }
     };
     
     window.speechSynthesis.speak(utterance);
   };
 
+  // ★修正：ボタンを押した瞬間にマイクを「再生成」して起動する
   const startListening = () => {
+    // 1. 読み上げを止める（これでオーディオ機能が目覚めることが多い）
     window.speechSynthesis.cancel();
+
+    // 2. 既存のマイク設定があれば破棄する
     if (recognitionRef.current) {
       try {
-        recognitionRef.current.start();
+        recognitionRef.current.abort();
+      } catch(e) {}
+    }
+
+    // 3. マイク設定を「新品」に作り直す（これがPWAでの不具合を防ぐ鍵！）
+    const newRecognition = setupRecognition();
+
+    // 4. 起動する
+    if (newRecognition) {
+      try {
+        newRecognition.start();
       } catch (e) {
-        console.log("Already listening");
+        console.error("Start failed:", e);
       }
     } else {
       alert("このブラウザは音声認識に対応していません。Google Chrome推奨です。");
     }
   };
 
-  // ★修正：検索中でも強制停止する強力なリセット機能
   const handleReset = () => {
-    // 1. AIへの通信をバッサリ切断
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
       abortControllerRef.current = null;
     }
 
-    // 2. 音声認識（マイク）を停止
     if (recognitionRef.current) {
       recognitionRef.current.abort();
     }
     setIsListening(false);
 
-    // 3. 読み上げ音声を停止
     window.speechSynthesis.cancel(); 
-
-    // 4. 画面の状態を初期化
     setResponse("");       
     setInputText("");      
-    setIsLoading(false); // 検索中アイコンも消す
+    setIsLoading(false);
   };
 
   return (
@@ -165,7 +189,6 @@ export default function Home() {
               <div className="text-red-500 animate-pulse text-sm font-bold tracking-widest">
                 SEARCHING...
               </div>
-              {/* ローディング中もキャンセルできることを示唆 */}
               <p className="text-xs text-gray-500 mt-2">
                 「クリア」で中断できます
               </p>
@@ -210,7 +233,6 @@ export default function Home() {
 
         {/* ボタン列 */}
         <div className="flex gap-3 mb-4 h-12">
-          {/* クリアボタン：機能強化（通信中断機能つき） */}
           <button 
             onClick={handleReset}
             className="flex-1 bg-gray-800 text-gray-400 rounded-lg font-bold border border-gray-700 hover:bg-gray-700 hover:text-white transition-colors flex items-center justify-center gap-2 active:scale-95"
