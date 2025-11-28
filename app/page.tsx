@@ -67,38 +67,38 @@ export default function Home() {
     window.speechSynthesis.speak(utterance);
   };
 
-  // ★修正：トグル式に変更
-  const toggleListening = () => {
+  // ★修正：以前のシンプルな起動方式に戻す
+  const startListening = () => {
     window.speechSynthesis.cancel();
-
-    if (isListening) {
-      // 聞き取り中に押されたら、強制ストップ（これでonresultが呼ばれる場合と、呼ばれない場合があるが、ブラウザ挙動に依存）
-      // ※多くのブラウザではstop()で解析が完了します
-      recognitionRef.current?.stop();
-    } else {
-      if (recognitionRef.current) {
-        try {
-          recognitionRef.current.start();
-        } catch (e) {
-          console.log("Already listening");
-        }
-      } else {
-        alert("このブラウザは音声認識に対応していません。Google Chrome推奨です。");
+    if (recognitionRef.current) {
+      try {
+        recognitionRef.current.start();
+      } catch (e) {
+        // すでに開始している場合は何もしない（自動終了を待つ）
+        console.log("Already listening");
       }
+    } else {
+      alert("このブラウザは音声認識に対応していません。Google Chrome推奨です。");
     }
   };
 
+  // ★修正：リセット時にマイクも強制キャンセルする機能を追加
   const handleReset = () => {
     setResponse("");       
     setInputText("");      
-    window.speechSynthesis.cancel(); 
+    window.speechSynthesis.cancel(); // 読み上げ停止
+    
+    // マイクキャンセル処理
+    if (recognitionRef.current) {
+      recognitionRef.current.abort(); // stop()ではなくabort()で即座に中断
+    }
+    setIsListening(false);
   };
 
   return (
-    // ★修正：h-dvhを使ってスマホの画面高さにピッタリ合わせる (スクロール防止)
     <main className="h-dvh bg-gray-950 text-white flex flex-col font-sans overflow-hidden">
       
-      {/* 1. ヘッダーエリア (固定) */}
+      {/* 1. ヘッダーエリア */}
       <header className="flex-none pt-4 pb-2 px-4 border-b border-red-900/30 bg-gray-950 z-10">
         <div className="flex justify-between items-center mb-2">
           <div>
@@ -109,7 +109,6 @@ export default function Home() {
               POCKET MECHANIC
             </p>
           </div>
-          {/* ハンズフリーボタン */}
           <button
             onClick={() => setIsHandsFree(!isHandsFree)}
             className={`py-2 px-4 rounded-full text-xs font-bold transition-all flex items-center gap-2 ${
@@ -124,7 +123,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 2. メインコンテンツエリア (残りの高さを埋める・スクロール可能) */}
+      {/* 2. メインコンテンツエリア */}
       <div className="flex-grow flex flex-col p-4 overflow-y-auto min-h-0">
         
         {/* AI回答表示 */}
@@ -161,7 +160,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. 操作エリア (画面下部に固定) */}
+      {/* 3. 操作エリア */}
       <div className="flex-none p-4 bg-gray-950 border-t border-gray-900">
         
         {/* テキスト入力 */}
@@ -174,8 +173,9 @@ export default function Home() {
           onKeyDown={(e) => e.key === "Enter" && handleSend(inputText)}
         />
 
-        {/* ボタン列 (クリア / 送信) */}
+        {/* ボタン列 */}
         <div className="flex gap-3 mb-4 h-12">
+          {/* クリアボタン：押すとリセット＋マイクキャンセル */}
           <button 
             onClick={handleReset}
             className="flex-1 bg-gray-800 text-gray-400 rounded-lg font-bold border border-gray-700 hover:bg-gray-700 hover:text-white transition-colors flex items-center justify-center gap-2 active:scale-95"
@@ -192,16 +192,15 @@ export default function Home() {
           </button>
         </div>
 
-        {/* 巨大マイクボタン (トグル動作) */}
+        {/* 巨大マイクボタン：押すだけ（停止は自動） */}
         <button
-          onClick={toggleListening}
+          onClick={startListening}
           className={`w-full h-32 rounded-2xl flex flex-col items-center justify-center shadow-lg transition-all border relative overflow-hidden ${
             isListening 
               ? "bg-red-600 border-red-400 animate-pulse shadow-[0_0_20px_rgba(220,38,38,0.6)]" 
               : "bg-gradient-to-b from-red-700 to-red-900 border-red-500/30 active:scale-[0.98]"
           }`}
         >
-          {/* 明滅時はアイコンを変える演出 */}
           {isListening ? (
             <div className="flex items-center gap-1 mb-2">
               <span className="block w-2 h-8 bg-white rounded-full animate-[bounce_1s_infinite]"></span>
@@ -215,7 +214,8 @@ export default function Home() {
           )}
           
           <span className="text-xl font-bold text-white tracking-widest relative z-10">
-            {isListening ? "タップで完了" : "音声で質問"}
+            {/* ★修正：タップで完了を削除し、状態表示のみに */}
+            {isListening ? "聞き取り中..." : "音声で質問"}
           </span>
         </button>
       </div>
