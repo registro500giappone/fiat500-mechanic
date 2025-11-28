@@ -8,26 +8,26 @@
   {
     "id": "1-2",
     "category": "エンジン",
-    "title": "エンジンの取り外し (セダン)",
-    "text": "1. 車体後部をジャッキアップし、ウマをかけます。\n2. バッテリーのマイナス端子を外します。\n3. エンジンルームのリッド（蓋）を外します。\n4. スターター、ジェネレーター、コイルの配線を外します。\n5. アクセルワイヤー、チョークワイヤー、燃料ホースを外します。\n6. ヒーターホースとエアダクトを外します。\n7. エンジンとミッションを結合しているボルトを外します。\n8. エンジンマウントを外し、エンジンを慎重に後方へ引き抜いて降ろします。"
+    "title": "エンジンの取り外し (Removal)",
+    "text": "1. 車体後部をジャッキアップし、スタンド（ウマ）で固定します。\n2. バッテリーのマイナス端子を外します。\n3. エンジンルームのリッド（蓋）を外します。\n4. スターター、ジェネレーター、コイルの配線を外します。\n5. アクセルワイヤー、チョークワイヤー、燃料ホースを外します。\n6. ヒーターホースとエアダクトを外します。\n7. エンジンとミッションを結合しているボルトを外します。\n8. エンジンマウントを外し、エンジンを慎重に後方へ引き抜いて降ろします。"
   },
   {
     "id": "1-6",
     "category": "エンジン",
-    "title": "シリンダーヘッドの整備",
-    "text": "バルブシートの角度は、インテーク・エキゾースト共に 45° ± 5' です。バルブステムとガイドのクリアランス規定値は 0.00087〜0.00217インチ (0.022〜0.055mm) です。これを超えた場合はガイドの交換が必要です。"
+    "title": "シリンダーヘッドの整備 (Cylinder Head)",
+    "text": "バルブシートの角度は、インテーク・エキゾースト共に 45度 ± 5分 です。バルブステムとガイドのクリアランス規定値は 0.00087〜0.00217インチ (0.022〜0.055mm) です。これを超えた場合はガイドの交換が必要です。"
   },
   {
     "id": "1-9",
     "category": "エンジン",
-    "title": "ピストンとリング",
-    "text": "ピストンリングの合口隙間（リングギャップ）を確認してください。リングを取り付ける際は、合口が一直線にならないように配置し、ピストンの拡張ストップの反対側にくるようにしてください。ピストンピンは80℃の熱湯でピストンを温めてから挿入します。"
+    "title": "ピストンとリング (Piston & Rings)",
+    "text": "ピストンリングの合口隙間（リングギャップ）を確認してください。リングを取り付ける際は、合口が一直線にならないように配置し、ピストンの拡張ストップ（ノックピン）の反対側にくるようにしてください。ピストンピンは80℃の熱湯でピストンを温めてから挿入します。"
   },
   {
     "id": "1-10",
     "category": "エンジン",
     "title": "コンロッド (Connecting Rods)",
-    "text": "コンロッドベアリング（子メタル）のクリアランスは 0.00043〜0.00240インチ (0.011〜0.061mm) です。プラスチゲージを使用して測定してください。組み付け時のビッグエンドキャップの締め付けトルクは 23.9 lb·ft (約 3.3 kg-m / 32.4 N·m) です。"
+    "text": "コンロッドベアリング（子メタル）のクリアランスは 0.00043〜0.00240インチ (0.011〜0.061mm) です。プラスチゲージを使用して測定してください。組み付け時のビッグエンドキャップの締め付けトルクは 23.9 lb·ft (約 3.3 kg m / 32.4 N m) です。"
   },
   {
     "id": "1-11",
@@ -39,171 +39,165 @@
     "id": "1-12",
     "category": "エンジン",
     "title": "フライホイール (Flywheel)",
-    "text": "フライホイールを取り付ける際は、クランクシャフトとの位置関係（合いマーク）を確認してください。ボルトは新しいロックプレートと共に使用し、規定トルク 23.1 lb·ft (約 3.2 kg-m / 31.3 N·m) で締め付け、ロックプレートを曲げて固定します。"
+    "text": "フライホイールを取り付ける際は、クランクシャフトとの合いマークを確認してください。ボルトは新しいロックプレートと共に使用し、規定トルク 23.1 lb·ft (約 3.2 kg m / 31.3 N m) で締め付け、ロックプレートを曲げて固定します。"
   },
   {
     "id": "1-13",
     "category": "エンジン",
-    "title": "オイルポンプ",
+    "title": "オイルポンプ (Oil Pump)",
     "text": "オイルポンプはタイミングカバー内にあります。ギアとハウジングのクリアランスは 0.0012〜0.0035インチ (0.03〜0.09mm) が規定値です。摩耗限度は 0.0047インチ (0.12mm) です。"
   },
   {
     "id": "1-14",
     "category": "エンジン",
     "title": "遠心オイルフィルター (Centrifugal Oil Filter)",
-    "text": "遠心オイルフィルターのカバー（プーリー）を取り付ける際は、Oリングが正しく装着されているか確認してください。フィルター本体をクランクシャフトに固定する中空ボルトの締め付けトルクは 108.5 lb·ft (約 15.0 kg-m / 147 N·m) です。カバーの小さなボルトは 5.8 lb·ft (約 0.8 kg-m / 7.8 N·m) で締め付けます。"
+    "text": "遠心オイルフィルターのカバー（プーリー）を取り付ける際は、Oリングが正しく装着されているか確認してください。フィルター本体をクランクシャフトに固定する中空ボルトの締め付けトルクは 108.5 lb·ft (約 15.0 kg m / 147 N m) です。非常に強いトルクが必要です。カバーの小さなボルトは 5.8 lb·ft (約 0.8 kg m) で締め付けます。"
   },
   {
     "id": "1-16",
     "category": "エンジン",
     "title": "バルブクリアランス (タペット調整)",
-    "text": "エンジンが冷えている状態で測定してください。インテーク、エキゾースト共に規定値は 0.0059インチ (0.15mm) です。クリアランスが大きすぎると騒音の原因になり、小さすぎるとバルブ損傷の原因になります。"
+    "text": "エンジンが冷えている状態（Cold）で測定してください。インテーク、エキゾースト共に規定値は 0.0059インチ (0.15mm) です。クリアランスが大きすぎると騒音の原因になり、小さすぎるとバルブ損傷の原因になります。"
   },
   {
     "id": "1-17-1",
     "category": "エンジン",
     "title": "エンジンの組み立て (シリンダーヘッド)",
-    "text": "シリンダーヘッドナットの締め付けは、必ず対角線上の順序で行ってください。2段階に分けて締め付けることを推奨します。最終的な規定トルクは 23.9 lb·ft (約 3.3 kg-m / 32.4 N·m) です。"
+    "text": "シリンダーヘッドナットの締め付けは、必ず対角線上の順序で行ってください。2段階に分けて締め付けることを推奨します（1回目: 18.1 lb·ft）。最終的な規定トルクは 23.9 lb·ft (約 3.3 kg m / 32.4 N m) です。"
   },
   {
     "id": "1-17-2",
     "category": "エンジン",
     "title": "ロッカーアームシャフトの取り付け",
-    "text": "ロッカーアームシャフトのサポート取り付けナットの締め付けトルクは 15.2 lb·ft (約 2.1 kg-m / 20.6 N·m) です。取り付け後に必ずバルブクリアランスを調整してください。"
+    "text": "ロッカーアームシャフトのサポート取り付けナットの締め付けトルクは 15.2 lb·ft (約 2.1 kg m / 20.6 N m) です。取り付け後に必ずバルブクリアランスを調整してください。"
   },
   {
     "id": "1-20",
     "category": "エンジン",
     "title": "ファンベルトの調整",
-    "text": "ジェネレータープーリーの分割シム（スペーサー）の枚数を変えることで張りを調整します。ベルトの中央を約22ポンド(10kg)の力で押した時、たわみ量が 約10mm (13/32インチ) になるのが適正です。"
+    "text": "ジェネレータープーリーの分割シム（スペーサー）の枚数を変えることで張りを調整します。シムを抜くと張り、足すと緩みます。ベルトの中央を約22ポンド(10kg)の力で押した時、たわみ量が 約10mm (13/32インチ) になるのが適正です。プーリーナットのトルクは 14.5 lb·ft (2.0 kg m) です。"
   },
   {
-    "id": "3-3",
-    "category": "点火系",
-    "title": "ポイント（コンタクトブレーカー）の調整",
-    "text": "ポイントギャップの規定値は 0.0185〜0.0209インチ (0.47〜0.53mm) です。最大に開いた位置で測定してください。ポイント面が荒れている場合はオイルストーンで磨くか交換してください。"
-  },
-  {
-    "id": "3-7",
-    "category": "点火系",
-    "title": "点火時期の調整 (タイミング)",
-    "text": "第1シリンダーを圧縮上死点に合わせ（両バルブ閉）、クランクシャフトを回して遠心フィルターカバーのマークを合わせます。規定値: 10° BTDC (上死点前10度)。専用ツール(AP.5030/1)がない場合は、タイミングカバーの矢印より約13-14mm (0.51-0.55インチ) 手前にマークが来るようにセットしてください。"
-  },
-  {
-    "id": "3-8",
-    "category": "点火系",
-    "title": "スパークプラグ",
-    "text": "スパークプラグの電極ギャップ規定値: 0.019〜0.023インチ (0.48〜0.58mm)。取り付け時の締め付けトルクは 18〜21 lb·ft (約 2.5〜2.9 kg-m / 24〜28 N·m) です。ネジ山には焼付き防止剤を塗布することを推奨します。"
-  },
-{
     "id": "2-3",
     "category": "燃料系",
     "title": "燃料ポンプのメンテナンス (Fuel Pump)",
-    "text": "Periodically check the pump body screws and upper cover screw for tightness. Check fuel lines for restriction or chafing. Clean the filter periodically."
+    "text": "定期的にポンプ本体のネジと上部カバーのネジの緩みを確認してください。燃料ホースの詰まりや擦れがないか点検し、フィルターは定期的に清掃してください。"
   },
   {
     "id": "2-6-1",
     "category": "燃料系",
     "title": "キャブレターの調整 (アイドリング)",
-    "text": "The idling speed is adjusted by the throttle setscrew and the mixture setscrew. Adjust when engine is at normal operating temperature. Turn the mixture screw in or out to find the smoothest running, then reduce throttle opening slightly to obtain best idling speed."
+    "text": "アイドリング調整は、スロットルストップスクリュー（回転数）とミクスチャースクリュー（混合気）で行います。必ずエンジンが暖まった状態で行ってください。ミクスチャースクリューを回して回転が最もスムーズになる位置を探し、その後スロットルスクリューを戻して適正回転数に合わせます。"
   },
   {
     "id": "2-6-2",
     "category": "燃料系",
     "title": "フロートレベルの調整 (Float Level)",
-    "text": "Check that the needle valve is screwed tight. With the cover vertical and float arm touching the needle ball, the float should be 7mm (0.276 inch) or 5/16 inch away from the cover with gasket. Float travel should be 5/16 inch."
+    "text": "ニードルバルブがしっかり締まっているか確認してください。カバーを垂直に立て、フロートアームがニードルのボールに軽く触れた状態で、ガスケットを含むカバー面からフロートまでの距離が 7mm (0.276インチ / 5/16インチ) である必要があります。フロートの移動量は 5/16インチです。"
+  },
+  {
+    "id": "3-3",
+    "category": "点火系",
+    "title": "ポイント（コンタクトブレーカー）の調整",
+    "text": "ポイントギャップの規定値は 0.0185〜0.0209インチ (0.47〜0.53mm) です。カム山に乗り上げ、最大に開いた位置で測定してください。ポイント面が荒れている場合はオイルストーンで磨くか交換してください。"
+  },
+  {
+    "id": "3-7",
+    "category": "点火系",
+    "title": "点火時期の調整 (タイミング)",
+    "text": "第1シリンダーを圧縮上死点に合わせ（両バルブ閉）、クランクシャフトを回して遠心フィルターカバーのマークを合わせます。規定値は 10度 BTDC (上死点前10度) です。専用ツールがない場合は、タイミングカバーの矢印より約13-14mm (0.51-0.55インチ) 手前にマークが来るようにセットしてください。"
+  },
+  {
+    "id": "3-8",
+    "category": "点火系",
+    "title": "スパークプラグ (Spark Plugs)",
+    "text": "スパークプラグの電極ギャップ規定値は 0.019〜0.023インチ (0.48〜0.58mm) です。取り付け時の締め付けトルクは 18〜21 lb·ft (約 2.5〜2.9 kg m) です。ネジ山には焼付き防止剤の塗布を推奨します。"
   },
   {
     "id": "4-2",
     "category": "冷却系",
     "title": "冷却ファンのサーモスタット (Thermostat)",
-    "text": "The thermostat controls the air outlet shutter. It starts opening at 158-165°F (70-74°C) and should be wide open at 178-189°F (81-87°C). Check that initial movement is 0.0197-0.0394 inch (0.5-1.0mm)."
-  },
-  {
-    "id": "4-3",
-    "category": "冷却系",
-    "title": "ファンベルトの張り調整 (Fan Belt Tension)",
-    "text": "Check that the tension is correct: with a hand pressure of approximately 22 lb (10kg), the belt should sag 13/32 inch (approx 10mm). Adjust by adding or removing spacer rings between the pulley halves. Pulley nut torque: 14.5 lb·ft (2.0 kg-m)."
+    "text": "サーモスタットは排気ダクトのシャッターを制御します。158-165°F (70-74°C) で開き始め、178-189°F (81-87°C) で全開になります。初期動作が 0.5-1.0mm 程度あるか確認してください。"
   },
   {
     "id": "5-4",
     "category": "クラッチ",
     "title": "クラッチの調整 (Pedal Travel)",
-    "text": "Clutch pedal must have free travel of 1-3/8 to 1-9/16 inch (35-40mm) for early models. For 500F/L models, free travel should be 19/32 to 1-3/16 inch (15-30mm). Adjust via the tie rod locknut."
+    "text": "クラッチペダルの遊び（フリートラベル）は、初期モデルでは 1-3/8 〜 1-9/16インチ (35-40mm)、500F/Lモデルでは 19/32 〜 1-3/16インチ (15-30mm) が規定値です。タイロッドのロックナットで調整します。"
   },
   {
     "id": "5-5",
     "category": "クラッチ",
     "title": "クラッチの取り付け (Installation)",
-    "text": "Tighten the clutch mounting screws diagonally a turn at a time. Torque setting: 5.8 to 7.2 lb·ft (0.8-1.0 kg-m). Use alignment tool A.62023."
+    "text": "クラッチカバーの取り付けボルトは、対角線上に少しずつ締め込んでください。規定トルクは 5.8 〜 7.2 lb·ft (0.8-1.0 kg m) です。締めすぎに注意してください。芯出しツール(A.62023)の使用を推奨します。"
   },
   {
     "id": "6-4",
     "category": "ギアボックス",
     "title": "ギアボックスの締め付けトルク (Gearbox Assembly)",
-    "text": "Tighten primary shaft and layshaft nuts to: Primary 18.1-25.3 lb·ft (2.5-3.5 kg-m), Layshaft 28.9-36.2 lb·ft (4.0-5.0 kg-m). Gearbox to body mounting nuts: 18.1-21.7 lb·ft (2.5-3.0 kg-m)."
+    "text": "シャフトナットの締め付けトルクは以下の通りです。\n- プライマリシャフト: 18.1-25.3 lb·ft (2.5-3.5 kg m)\n- レイシャフト: 28.9-36.2 lb·ft (4.0-5.0 kg m)\n- ミッションとボディの結合ナット: 18.1-21.7 lb·ft (2.5-3.0 kg m)"
   },
   {
     "id": "6-7",
     "category": "ギアボックス",
     "title": "デフ・ファイナルギア (Differential)",
-    "text": "Ring gear to pinion backlash should be 0.0031-0.0047 inch (0.08-0.12mm). Differential bearing cap nuts torque: 27.5 lb·ft (3.8 kg-m)."
+    "text": "リングギアとピニオンのバックラッシュは 0.0031-0.0047インチ (0.08-0.12mm) です。デフベアリングキャップナットのトルクは 27.5 lb·ft (3.8 kg m) です。"
   },
-{
+  {
     "id": "7-3",
     "category": "リアサスペンション",
     "title": "リアホイールベアリングの調整 (Rear Wheel Bearings)",
-    "text": "Tighten the wheel shaft nut gradually so that the rotation torque does not exceed 0.36 lb·ft (0.05 kg-m). If torque is too high, fit a new resilient spacer. Pack bearings with Fiat MR grease."
+    "text": "ホイールシャフトナットを徐々に締め、回転トルク（抵抗）が 0.36 lb·ft (0.05 kg m) を超えないように調整します。もしトルクが強すぎる場合は、新しい弾性スペーサーに交換してください。ベアリングにはFiat MRグリスを充填します。"
   },
   {
     "id": "7-5",
     "category": "リアサスペンション",
-    "title": "リアサスペンションの取り付けトルク (Rear Suspension Torque)",
-    "text": "Tighten swing arm pin nuts to 43.4-50.6 lb·ft (6.0-7.0 kg-m). Outer support mounting screws to 28.9-36.2 lb·ft (4.0-5.0 kg-m). Wheel mounting bolts to 32.5-39.8 lb·ft (4.5-5.5 kg-m)."
+    "title": "リアサスペンション・ホイールのトルク (Rear Suspension & Wheel Torque)",
+    "text": "ホイール取り付けボルト (Wheel bolts): 32.5-39.8 lb·ft (4.5-5.5 kg m)。\nスイングアームのピボットピンナット: 43.4-50.6 lb·ft (6.0-7.0 kg m)。\n外部サポート取り付けネジ: 28.9-36.2 lb·ft (4.0-5.0 kg m)。"
   },
   {
     "id": "7-6",
     "category": "リアサスペンション",
     "title": "リアトーイン調整 (Rear Toe-in)",
-    "text": "Rear wheel plane must be parallel to car centerline with a tolerance of 0° 10'. Adjust by moving the swinging arm outer support. Drive shaft flange screws torque: 20.3 lb·ft (2.8 kg-m)."
+    "text": "リアホイールは車体の中心線に対して平行、許容範囲は 0度10分 である必要があります。スイングアーム外部サポートを動かして調整します。ドライブシャフトフランジのネジは 20.3 lb·ft (2.8 kg m) です。"
   },
   {
     "id": "8-8",
     "category": "フロントサスペンション",
     "title": "フロントサスペンションのトルク (Front Suspension Torque)",
-    "text": "Swing arm to wheel assembly nuts: 39.8 lb·ft (5.5 kg-m). Leaf spring to kingpin housing: 28.9 lb·ft (4.0 kg-m). Swing arm pin to body: 28.9 lb·ft (4.0 kg-m)."
+    "text": "スイングアームとホイールアセンブリのナット: 39.8 lb·ft (5.5 kg m)。板バネ（リーフスプリング）とキングピンハウジングの結合: 28.9 lb·ft (4.0 kg m)。スイングアームピンとボディ: 28.9 lb·ft (4.0 kg m)。"
   },
   {
     "id": "8-8-3",
     "category": "フロントサスペンション",
     "title": "フロントハブベアリングの調整 (Front Hub)",
-    "text": "For cotter pin type: Tighten nut to 21.7 lb·ft (3.0 kg-m), back off 60 degrees (1 flat). For stake nut type: Tighten to 14.5 lb·ft (2.0 kg-m) to seat, back off, then retighten to 5.1 lb·ft (0.7 kg-m) and back off 30 degrees. Hub end play must be 0.001-0.0039 inch (0.025-0.10mm)."
+    "text": "コッターピンタイプの場合: ナットを 21.7 lb·ft (3.0 kg m) で締めた後、60度（1面分）戻します。\nカシメタイプの場合: 14.5 lb·ft (2.0 kg m) で締めて馴染ませた後、一度緩め、再度 5.1 lb·ft (0.7 kg m) で締め、そこから30度戻します。\nハブのエンドプレイ（ガタ）は 0.001-0.0039インチ (0.025-0.10mm) になるようにします。"
   },
   {
     "id": "9-4",
     "category": "ステアリング",
     "title": "ステアリングボックスのトルク (Steering Box)",
-    "text": "Pitman arm nut torque: 72 lb·ft (10.0 kg-m). Steering box to body nuts: 14-18 lb·ft (1.9-2.5 kg-m)."
+    "text": "ピットマンアームナット: 72 lb·ft (10.0 kg m)。ステアリングボックスとボディの固定ナット: 14-18 lb·ft (1.9-2.5 kg m)。"
   },
   {
     "id": "9-6",
     "category": "ステアリング",
     "title": "タイロッドのトルク (Tie Rods)",
-    "text": "Tie rod and knuckle arm ball pin nuts: 18-21 lb·ft (2.5-2.9 kg-m). Relay lever pivot pin nut: 39-43 lb·ft (5.4-5.9 kg-m)."
+    "text": "タイロッドエンドとナックルアームのボールピンナット: 18-21 lb·ft (2.5-2.9 kg m)。リレーレバーピボットピンナット: 39-43 lb·ft (5.4-5.9 kg m)。"
   },
   {
     "id": "9-7",
     "category": "ステアリング",
     "title": "フロントトーイン調整 (Front Toe-in)",
-    "text": "Front wheel toe-in should be 0-0.079 inch (0-2mm). Measured at wheel rims. Adjust by turning the tie rod sleeves."
+    "text": "フロントホイールのトーインは 0〜0.079インチ (0〜2mm) です。ホイールリム間で測定します。タイロッドスリーブを回して調整します。"
   },
   {
     "id": "10-3",
     "category": "ブレーキ",
     "title": "ブレーキの整備基準 (Brake Specs)",
-    "text": "Minimum permissible brake lining thickness: 0.059 inch (1.5mm). Drum maximum permissible oversize diameter: 0.039 inch (1.0mm) over nominal 6.702 inch."
+    "text": "ブレーキシュー（ライニング）の摩耗限度厚さは 0.059インチ (1.5mm) です。ドラムの最大許容内径（研磨限界）は、標準値 6.702インチ に対して +0.039インチ (1.0mm) までです。"
   },
-{
+  {
     "id": "11-2",
     "category": "電気系",
     "title": "バッテリーのメンテナンス (Battery)",
@@ -213,7 +207,7 @@
     "id": "11-3",
     "category": "電気系",
     "title": "ジェネレーター (Generator)",
-    "text": "プーリーのファン取り付けナットの締め付けトルクは 14.5 lb·ft (約 2.0 kg-m / 20 N·m) です。ブラシの長さが規定以下になったら交換してください。ブラシスプリングの張力は 1.3-1.6 lb (約 0.6-0.7 kg) です。"
+    "text": "プーリーのファン取り付けナットの締め付けトルクは 14.5 lb·ft (約 2.0 kg m / 20 N m) です。ブラシの長さが規定以下になったら交換してください。ブラシスプリングの張力は 1.3-1.6 lb (約 0.6-0.7 kg) です。"
   },
   {
     "id": "11-4",
