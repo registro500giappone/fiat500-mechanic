@@ -8,7 +8,10 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isHandsFree, setIsHandsFree] = useState(false);
+  
   const recognitionRef = useRef<any>(null);
+  // ★追加：通信を強制切断するためのコントローラー
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined" && (window as any).webkitSpeechRecognition) {
@@ -32,6 +35,16 @@ export default function Home() {
 
   const handleSend = async (text: string) => {
     if (!text) return;
+
+    // 前回の通信が残っていたらキャンセル
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+
+    // 新しい通信用のコントローラーを作成
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
     setIsLoading(true);
     setResponse(""); 
 
@@ -40,14 +53,24 @@ export default function Home() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
+        signal: controller.signal, // ★ここで「中断スイッチ」をセット
       });
+      
       const data = await res.json();
       setResponse(data.reply);
       speak(data.reply);
-    } catch (error) {
-      setResponse("すみません、エラーが発生しました。");
+
+    } catch (error: any) {
+      // 中断(Abort)された場合はエラーメッセージを出さない
+      if (error.name === 'AbortError') {
+        console.log("Fetch aborted");
+      } else {
+        setResponse("すみません、エラーが発生しました。");
+      }
     } finally {
+      // 正常終了でも中断でも、ローディングは終わる
       setIsLoading(false);
+      abortControllerRef.current = null;
     }
   };
 
@@ -67,14 +90,12 @@ export default function Home() {
     window.speechSynthesis.speak(utterance);
   };
 
-  // ★修正：以前のシンプルな起動方式に戻す
   const startListening = () => {
     window.speechSynthesis.cancel();
     if (recognitionRef.current) {
       try {
         recognitionRef.current.start();
       } catch (e) {
-        // すでに開始している場合は何もしない（自動終了を待つ）
         console.log("Already listening");
       }
     } else {
@@ -82,17 +103,27 @@ export default function Home() {
     }
   };
 
-  // ★修正：リセット時にマイクも強制キャンセルする機能を追加
+  // ★修正：検索中でも強制停止する強力なリセット機能
   const handleReset = () => {
-    setResponse("");       
-    setInputText("");      
-    window.speechSynthesis.cancel(); // 読み上げ停止
-    
-    // マイクキャンセル処理
+    // 1. AIへの通信をバッサリ切断
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
+
+    // 2. 音声認識（マイク）を停止
     if (recognitionRef.current) {
-      recognitionRef.current.abort(); // stop()ではなくabort()で即座に中断
+      recognitionRef.current.abort();
     }
     setIsListening(false);
+
+    // 3. 読み上げ音声を停止
+    window.speechSynthesis.cancel(); 
+
+    // 4. 画面の状態を初期化
+    setResponse("");       
+    setInputText("");      
+    setIsLoading(false); // 検索中アイコンも消す
   };
 
   return (
@@ -134,6 +165,10 @@ export default function Home() {
               <div className="text-red-500 animate-pulse text-sm font-bold tracking-widest">
                 SEARCHING...
               </div>
+              {/* ローディング中もキャンセルできることを示唆 */}
+              <p className="text-xs text-gray-500 mt-2">
+                「クリア」で中断できます
+              </p>
             </div>
           ) : response ? (
             <div className="bg-gray-900 p-4 rounded-xl border-l-4 border-red-600 shadow-2xl relative">
@@ -175,7 +210,7 @@ export default function Home() {
 
         {/* ボタン列 */}
         <div className="flex gap-3 mb-4 h-12">
-          {/* クリアボタン：押すとリセット＋マイクキャンセル */}
+          {/* クリアボタン：機能強化（通信中断機能つき） */}
           <button 
             onClick={handleReset}
             className="flex-1 bg-gray-800 text-gray-400 rounded-lg font-bold border border-gray-700 hover:bg-gray-700 hover:text-white transition-colors flex items-center justify-center gap-2 active:scale-95"
@@ -192,7 +227,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* 巨大マイクボタン：押すだけ（停止は自動） */}
+        {/* 巨大マイクボタン */}
         <button
           onClick={startListening}
           className={`w-full h-32 rounded-2xl flex flex-col items-center justify-center shadow-lg transition-all border relative overflow-hidden ${
@@ -214,7 +249,6 @@ export default function Home() {
           )}
           
           <span className="text-xl font-bold text-white tracking-widest relative z-10">
-            {/* ★修正：タップで完了を削除し、状態表示のみに */}
             {isListening ? "聞き取り中..." : "音声で質問"}
           </span>
         </button>
