@@ -1,7 +1,5 @@
 // ここにマニュアルの全文を貼り付けます
 export const FULL_MANUAL_TEXT = `
-// ここにマニュアルの全文を貼り付けます
-export const FULL_MANUAL_TEXT = `
 
 FIAT 500 1957-73  
 Workshop Manual  
@@ -2470,5 +2468,4 @@ To remove the front suspension assembly proceed as follows:
 
 F500 87 Downloaded from www.Manualslib.com manuals search engine
 
-`;
 `;

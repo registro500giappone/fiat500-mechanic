@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
-// ★作成したデータファイルを読み込みます
-import { FULL_MANUAL_TEXT } from "@/app/lib/manual_data";
+// 相対パスで確実にデータを読み込みます
+import { FULL_MANUAL_TEXT } from "../../lib/manual_data";
 
 export async function POST(req: Request) {
   try {
@@ -14,7 +14,6 @@ export async function POST(req: Request) {
     const text = body.text;
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    // 長文読解に強い最新モデルを指定
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
