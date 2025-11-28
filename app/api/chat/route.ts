@@ -43,28 +43,21 @@ export async function POST(req: Request) {
     const text = body.text;
     console.log(`🗣️ 質問: "${text}"`);
 
-    // マニュアル検索
-    const keywords = text ? text.split(/[\s,、。]+/).filter((k: string) => k.length > 1) : [];
-    const relevantSections = manualData.filter((section: any) => {
-      const content = (section.title || "") + (section.text || "");
-      return keywords.some((k: string) => content.includes(k));
-    });
-    // ヒットしない場合は、「ホイール」「トルク」などの重要単語が含まれるセクションを優先的に含める、あるいは全データを渡す
-    const contextDocs = relevantSections.length > 0 ? relevantSections : manualData;
+    // ★変更点：検索（フィルタリング）を廃止し、常に全データをAIに渡す
+    // これにより「検索漏れ」で答えられないケースを根絶します
+    const contextText = manualData.map((doc: any) => 
+      `【${doc.title}】\n${doc.text}`
+    ).join("\n\n");
 
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    const contextText = contextDocs.map((doc: any) => 
-      `【${doc.title}】\n${doc.text}`
-    ).join("\n\n");
-
     const prompt = `
       あなたはクラシックFIAT 500の熟練メカニックAIです。
-      以下の「整備マニュアル」の内容を根拠にして、ユーザーの質問に答えてください。
+      以下の「整備マニュアル」の内容をすべて把握した上で、ユーザーの質問に答えてください。
 
       [整備マニュアル]
-      ${contextText.substring(0, 30000)}
+      ${contextText}
 
       [ユーザーの質問]
       ${text}
@@ -80,7 +73,7 @@ export async function POST(req: Request) {
          - 1 lb·ft = 0.138 kg m
          - 1 lb·ft = 1.356 N m
       4. インチ(inch)はミリ(mm)に換算すること。
-      5. 質問が「ホイールのトルク」に関連する場合、リアサスペンションの章にあるホイールボルトのトルクを回答すること。
+      5. 質問に対してマニュアル内に該当する情報があれば、章をまたいででも必ず見つけ出して回答すること。
     `;
 
     const result = await model.generateContent(prompt);
