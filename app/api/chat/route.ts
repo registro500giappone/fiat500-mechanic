@@ -43,8 +43,7 @@ export async function POST(req: Request) {
     const text = body.text;
     console.log(`🗣️ 質問: "${text}"`);
 
-    // ★変更点：検索（フィルタリング）を廃止し、常に全データをAIに渡す
-    // これにより「検索漏れ」で答えられないケースを根絶します
+    // 全データを結合してAIに渡す（検索ロジックなし）
     const contextText = manualData.map((doc: any) => 
       `【${doc.title}】\n${doc.text}`
     ).join("\n\n");
@@ -52,6 +51,7 @@ export async function POST(req: Request) {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
+    // ★修正箇所：substring(0, 30000) を削除し、全テキストを渡すように変更
     const prompt = `
       あなたはクラシックFIAT 500の熟練メカニックAIです。
       以下の「整備マニュアル」の内容をすべて把握した上で、ユーザーの質問に答えてください。
