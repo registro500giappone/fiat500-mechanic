@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Fiat 500 Mechanic',
-    short_name: 'Fiat500',
+    name: 'FIAT 500 AI音声マニュアル', // アプリ起動時や一覧に出る正式名称
+    short_name: '音声マニュアル',      // ★ホーム画面のアイコン下に表示される名前
     description: 'Classic Fiat 500 Hands-free Mechanic Assistant',
     start_url: '/',
     display: 'standalone',

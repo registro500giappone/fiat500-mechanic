@@ -1,8 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#dc2626" rx="100"/>
-  <path fill="#ffffff" d="M100 256h60c15 0 25-10 25-25v-20c0-15-10-25-25-25h-30v-40h50c10 0 15-5 15-15v-20c0-10-5-15-15-15H100c-15 0-25 10-25 25v110c0 15 10 25 25 25z"/>
-  <path fill="#ffffff" d="M220 256h60c15 0 25-10 25-25v-80c0-15-10-25-25-25h-60c-15 0-25 10-25 25v80c0 15 10 25 25 25zm25-90h10v40h-10v-40z"/>
-  <path fill="#ffffff" d="M340 256h60c15 0 25-10 25-25v-80c0-15-10-25-25-25h-60c-15 0-25 10-25 25v80c0 15 10 25 25 25zm25-90h10v40h-10v-40z"/>
-  <path fill="#1f2937" d="M150 320l40 40 130-130 40 40" stroke="#1f2937" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.3"/>
-  <path fill="none" stroke="#ffffff" stroke-width="25" stroke-linecap="round" d="M140 380l232 0 M140 430l232 0" opacity="0.5"/>
+  <!-- アバルトレッドの背景 -->
+  <rect width="512" height="512" rx="110" fill="#dc2626"/>
+  
+  <!-- テキストグループ -->
+  <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">
+    <!-- 上段: FIAT -->
+    <text x="256" y="140" font-size="50" font-weight="bold" letter-spacing="8">FIAT</text>
+    
+    <!-- 中段: 500 (メインで大きく) -->
+    <text x="256" y="320" font-size="210" font-weight="900" letter-spacing="-10" style="font-style: italic;">500</text>
+    
+    <!-- 下段: MECHANIC -->
+    <text x="256" y="410" font-size="40" font-weight="bold" letter-spacing="2" opacity="0.9">MECHANIC</text>
+  </g>
+  
+  <!-- 装飾ライン -->
+  <rect x="136" y="340" width="240" height="6" rx="3" fill="#ffffff" opacity="0.6"/>
 </svg>
